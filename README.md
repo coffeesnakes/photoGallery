@@ -41,13 +41,11 @@ npm i
 
 **Success Status Code:** `200`
 
-**Failure Status Code:** `404`
 
 **Returns:** Array of JSON home objects.
 
 ```json
     {
-      home_id: INT,
       isSuperhost: Boolean,
       reviews: Boolean,
       rating: INT,
@@ -64,13 +62,11 @@ npm i
 
 **Success Status Code:** `200`
 
-**Failure Status Code:** `404`
 
 **Returns:** Expects JSON with the following keys.
 
 ```json
 {
-  id: INT,
   rating: INT,
   isSuperhost: Boolean,
   location: {
@@ -83,7 +79,8 @@ npm i
 
 -POST `/api/Home`
 
-###Path parameters:
+**Path Parameters:**
+- `id` - Home ID
 
 **Request Body**
 ```json
@@ -99,9 +96,8 @@ npm i
   ```
 
 ### Path responses:
-**Success Status Code:** `200`
+**Success Status Code:** `201`
 
-**Failure Status Code:** `404`
 
 ### Response format:
 * Returns: JSON
@@ -120,15 +116,15 @@ npm i
 
 </br>
 
--PUT `/api/Home`
+-PUT `/api/Home/:id`
 
-###Path parameters:
+**Path Parameters:**
+- `id` - Home ID
 
 **Request Body**
 *
 ```json
  {
-    home_id: INT,
     city: VARCHAR(200),
     state: VARCHAR(200),
     country: VARCHAR(200),
@@ -137,9 +133,8 @@ npm i
   ```
 
 ### Path responses:
-**Success Status Code:** `200`
+**Success Status Code:** `201`
 
-**Failure Status Code:** `404`
 
 ### Response format:
 * Returns: JSON
@@ -168,9 +163,8 @@ npm i
 
 
 ### Path responses:
-**Success Status Code:** `200`
+**Success Status Code:** `204`
 
-**Failure Status Code:** `404`
 
 ### Response format:
 * Returns: JSON
@@ -197,15 +191,13 @@ npm i
 
 - POST `/api/photos`
 
-**Success Status Code:** `200`
+**Success Status Code:** `201`
 
-**Failure Status Code:** `404`
 
 **Request Body**: Expects JSON with the following keys.
 
 ```json
 {
-  photo_id: INT,
   user_id: INT,
   photo_url: VARCHAR(200),
   upload_date: VARCHAR(200),
@@ -219,11 +211,10 @@ npm i
 
 **Path Parameters:**
 
-- `id` - photo id
+- `id` - Photo ID
 
-**Success Status Code:** `200`
+**Success Status Code:** `204`
 
-**Failure Status Code:** `404`
 
 ### Response format:
 * Returns: JSON
@@ -249,15 +240,13 @@ npm i
 
 - POST `/api/users`
 
-**Success Status Code:** `200`
+**Success Status Code:** `201`
 
-**Failure Status Code:** `404`
 
 **Request Body**: Expects JSON with the following keys.
 
 ```json
 {
-  user_id: INT,
   username: VARCHAR(25),
   email: VARCHAR(200),
   hashed_password: VARCHAR(255),
@@ -273,7 +262,6 @@ npm i
 
 **Success Status Code:** `200`
 
-**Failure Status Code:** `404`
 
 **Returns:** Expects JSON with the following keys.
 
@@ -288,9 +276,10 @@ npm i
 ```
 </br>
 
--PUT `/api/users`
+-PUT `/api/users/:id`
 
-###Path parameters:
+**Path Parameters:**
+- `id` - user ID
 
 **Request Body**
 *
@@ -305,9 +294,8 @@ npm i
 ```
 
 ### Path responses:
-**Success Status Code:** `200`
+**Success Status Code:** `201`
 
-**Failure Status Code:** `404`
 
 ### Response format:
 * Returns: JSON
@@ -327,18 +315,17 @@ npm i
 </br>
 -DELETE `/api/user/:id`
 
-###Path parameters:
+**Path Parameters:**
+- `id` - user ID
 
 **Request Body**
-*
 
    ```id``` user ID
 
 
 ### Path responses:
-**Success Status Code:** `200`
+**Success Status Code:** `204`
 
-**Failure Status Code:** `404`
 
 ### Response format:
 * Returns: JSON
