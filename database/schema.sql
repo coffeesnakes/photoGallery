@@ -39,6 +39,6 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 
-ALTER TABLE `Home` ADD FOREIGN KEY (home_id) REFERENCES `gallery` (`id`);
-ALTER TABLE `Home` ADD FOREIGN KEY (photos) REFERENCES `Photos` (`photo_id`);
-ALTER TABLE `Photos` ADD FOREIGN KEY (user_id) REFERENCES `users` (`user_id`);
+ALTER TABLE Home ADD FOREIGN KEY (home_id) REFERENCES gallery (id);
+ALTER TABLE Home ADD FOREIGN KEY (photos) REFERENCES Photos (photo_id);
+ALTER TABLE Photos ADD FOREIGN KEY (user_id) REFERENCES users (user_id);
