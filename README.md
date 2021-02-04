@@ -37,7 +37,7 @@ npm i
 
 ### Select home matching a Home ID
 
--GET `/api/galleries/:id`
+-GET `/api/galleries/:galleryId`
 
 **Success Status Code:** `200`
 
@@ -55,7 +55,7 @@ npm i
 
 ## _HOME API_
 
--GET `/api/Home/:id`
+-GET `/api/Home/:homeId`
 
 **Path Parameters:**
 - `id` - Home ID
@@ -116,7 +116,7 @@ npm i
 
 </br>
 
--PUT `/api/Home/:id`
+-PUT `/api/Home/:homeId`
 
 **Path Parameters:**
 - `id` - Home ID
@@ -152,7 +152,7 @@ npm i
 ```
 </br>
 
--DELETE `/api/Home/:id`
+-DELETE `/api/Home/:homeId`
 
 ###Path parameters:
 
@@ -207,7 +207,7 @@ npm i
 ```
 ## Delete photos matching photo id
 
-- DELETE `/api/photos/:id`
+- DELETE `/api/photos/:photoId`
 
 **Path Parameters:**
 
@@ -255,7 +255,7 @@ npm i
 ```
 </br>
 
--GET `/api/users/:id`
+-GET `/api/users/:userId`
 
 **Path Parameters:**
 - `id` - user ID
@@ -276,7 +276,7 @@ npm i
 ```
 </br>
 
--PUT `/api/users/:id`
+-PUT `/api/users/:userId`
 
 **Path Parameters:**
 - `id` - user ID
@@ -313,7 +313,8 @@ npm i
 ```
 
 </br>
--DELETE `/api/user/:id`
+
+-DELETE `/api/user/:deleteId`
 
 **Path Parameters:**
 - `id` - user ID
