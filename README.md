@@ -70,9 +70,9 @@ npm i
   rating: INT,
   isSuperhost: Boolean,
   location: {
-    city: VARCHAR(200),
-    state: VARCHAR(200),
-    country: VARCHAR(200),
+    city: String,
+    state: String,
+    country: String,
   }
 }
 ```
@@ -88,9 +88,9 @@ npm i
   rating: INT,
   isSuperhost: Boolean,
   location: {
-    city: VARCHAR(200),
-    state: VARCHAR(200),
-    country: VARCHAR(200),
+    city: String,
+    state: String,
+    country: String,
   }
 }
   ```
@@ -125,9 +125,9 @@ npm i
 *
 ```json
  {
-    city: VARCHAR(200),
-    state: VARCHAR(200),
-    country: VARCHAR(200),
+    city: String,
+    state: String,
+    country: String,
 
   }
   ```
@@ -199,9 +199,9 @@ npm i
 ```json
 {
   user_id: INT,
-  photo_url: VARCHAR(200),
-  upload_date: VARCHAR(200),
-  caption: VARCHAR(200),
+  photo_url: String,
+  upload_date: String,
+  caption: String,
   time_posted: Timestamp,
 }
 ```
@@ -247,10 +247,10 @@ npm i
 
 ```json
 {
-  username: VARCHAR(25),
-  email: VARCHAR(200),
-  hashed_password: VARCHAR(255),
-  ip: VARCHAR(30)
+  username: String,
+  email: String,
+  hashed_password: String,
+  ip: String
 }
 ```
 </br>
@@ -268,10 +268,10 @@ npm i
 ```json
 {
   user_id: INT,
-  username: VARCHAR(25),
-  email: VARCHAR(200),
-  hashed_password: VARCHAR(255),
-  ip: VARCHAR(30)
+  username: String,
+  email: String,
+  hashed_password: String,
+  ip: String
 }
 ```
 </br>
@@ -286,10 +286,10 @@ npm i
 ```json
 {
   user_id: INT,
-  username: VARCHAR(25),
-  email: VARCHAR(200),
-  hashed_password: VARCHAR(255),
-  ip: VARCHAR(30)
+  username: String,
+  email: String,
+  hashed_password: String,
+  ip: String
 }
 ```
 
