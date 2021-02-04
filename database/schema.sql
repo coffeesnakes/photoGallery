@@ -2,44 +2,42 @@ DROP SCHEMA IF EXISTS photoGallery CASCADE;
 CREATE SCHEMA IF NOT EXISTS photoGallery AUTHORIZATION sdc_user;
 
 CREATE TABLE IF NOT EXISTS gallery (
-  id INTEGER NULL AUTO_INCREMENT,
-  isSuperhost VARCHAR NULL DEFAULT NULL,
-  reviews BINARY NULL DEFAULT NULL,
-  rating INTEGER NULL DEFAULT NULL,
-  PRIMARY KEY (id)
+  id SERIAL PRIMARY KEY,
+  isSuperhost VARCHAR
+  reviews BINARY
+  rating INTEGER
+
 )
 
 CREATE TABLE IF NOT EXISTS homes (
-  home_id INTEGER NULL AUTO_INCREMENT,
-  city VARCHAR NULL DEFAULT NULL,
-  usState VARCHAR NULL DEFAULT NULL,
-  country VARCHAR NULL DEFAULT NULL,
-  rating INT NULL DEFAULT NULL,
-  superhost BINARY NULL DEFAULT NULL,
-  photos INTEGER NULL DEFAULT NULL,
-  PRIMARY KEY (home_id)
+  home_id  SERIAL PRIMARY KEY,
+  city VARCHAR,
+  usState VARCHAR,
+  country VARCHAR,
+  rating INT,
+  superhost BINARY,
+  photos INTEGER,
+
 );
 
 CREATE TABLE IF NOT EXISTS photos (
-  photo_id INTEGER NULL AUTO_INCREMENT,
-  user_id INTEGER NULL ,
-  photo_url VARCHAR NULL DEFAULT NULL,
-  upload_date TIMESTAMP NULL DEFAULT NULL,
-  caption VARCHAR NULL DEFAULT NULL,
-  PRIMARY KEY (photo_id)
+  photo_id  SERIAL PRIMARY KEY,
+  user_id INTEGER,
+  photo_url VARCHAR,
+  upload_date TIMESTAMP,
+  caption VARCHAR,
+
 );
 
 CREATE TABLE IF NOT EXISTS users (
-  user_id INTEGER NULL AUTO_INCREMENT,
-  username VARCHAR NULL DEFAULT NULL,
-  email VARCHAR NULL DEFAULT NULL,
-  hashed_password VARCHAR NULL DEFAULT NULL,
-  ip VARCHAR(30) NULL DEFAULT NULL,
+  user_id  SERIAL PRIMARY KEY,
+  username VARCHAR,
+  email VARCHAR,
+  hashed_password VARCHAR,
+  ip VARCHAR(30),
   PRIMARY KEY (user_id)
 );
--- ---
--- Foreign Keys
--- ---
+
 
 ALTER TABLE `Home` ADD FOREIGN KEY (home_id) REFERENCES `gallery` (`id`);
 ALTER TABLE `Home` ADD FOREIGN KEY (photos) REFERENCES `Photos` (`photo_id`);
