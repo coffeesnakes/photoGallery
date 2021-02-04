@@ -1,14 +1,14 @@
 DROP SCHEMA IF EXISTS photoGallery CASCADE;
 CREATE SCHEMA IF NOT EXISTS photoGallery AUTHORIZATION sdc_user;
 
-CREATE TABLE IF NOT EXISTS photoGallery.gallery (
+CREATE TABLE IF NOT EXISTS gallery (
   id SERIAL PRIMARY KEY,
   isSuperhost Boolean,
   reviews BOOLEAN,
   rating INTEGER
 );
 
-CREATE TABLE IF NOT EXISTS photoGallery.homes (
+CREATE TABLE IF NOT EXISTS homes (
   home_id  SERIAL PRIMARY KEY,
   city VARCHAR(135),
   usState VARCHAR(100),
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS photoGallery.homes (
   photos INTEGER
 );
 
-CREATE TABLE IF NOT EXISTS photoGallery.photos (
+CREATE TABLE IF NOT EXISTS photos (
   photo_id  SERIAL PRIMARY KEY,
   usr_id INTEGER,
   photo_url VARCHAR(225),
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS photoGallery.photos (
   caption VARCHAR(1000)
 );
 
-CREATE TABLE IF NOT EXISTS photoGallery.usr (
+CREATE TABLE IF NOT EXISTS usr (
   usr_id  SERIAL PRIMARY KEY,
   username VARCHAR(35),
   email VARCHAR(50),
@@ -35,5 +35,5 @@ CREATE TABLE IF NOT EXISTS photoGallery.usr (
 );
 
 
-ALTER TABLE photoGallery.homes ADD FOREIGN KEY (home_id) REFERENCES photoGallery.gallery (id);
-ALTER TABLE photoGallery.homes ADD FOREIGN KEY (photos) REFERENCES photoGallery.Photos (photo_id);
+ALTER TABLE homes ADD FOREIGN KEY (home_id) REFERENCES gallery (id);
+ALTER TABLE homes ADD FOREIGN KEY (photos) REFERENCES Photos (photo_id);
