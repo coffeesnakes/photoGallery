@@ -1,8 +1,8 @@
-const faker = require('faker');
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const faker = require("faker");
+const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 
-const randomBoolean = () => (Math.random() < 0.5);
-const randomInt = () => (Math.floor((Math.random() * 1000) / 100));
+const randomBoolean = () => Math.random() < 0.5;
+const randomInt = () => Math.floor((Math.random() * 1000) / 100);
 
 const home = (startIndex, endIndex) => {
   let homes = [];
@@ -22,21 +22,21 @@ const home = (startIndex, endIndex) => {
 };
 
 const csvWriter = createCsvWriter({
-  path: '/Users/helloFriend/Desktop/C0DE/photoGallery/database/CSV/homes.csv',
+  path: "/Users/helloFriend/Desktop/C0DE/photoGallery/database/CSV/homes.csv",
   header: [
-    { id: 'home_id', title: 'home_id' },
-    { id: 'city', title: 'city' },
-    { id: 'usState', title: 'usState' },
-    { id: 'country', title: 'country' },
-    { id: 'rating', title: 'rating' },
-    { id: 'superhost', title: 'superhost' },
-    { id: 'photo_id', title: 'photo_id' },
+    { id: "home_id", title: "home_id" },
+    { id: "city", title: "city" },
+    { id: "usState", title: "usState" },
+    { id: "country", title: "country" },
+    { id: "rating", title: "rating" },
+    { id: "superhost", title: "superhost" },
+    { id: "photo_id", title: "photo_id" },
   ],
 });
 
 async function writeHomes(num) {
   const currentChunk = Math.floor(num / 100);
-  console.log('chunk count', currentChunk);
+  console.log("chunk count", currentChunk);
 
   for (let i = 0; i < 100; ++i) {
     console.log(`Processing home chunk : ${i + 1}`);

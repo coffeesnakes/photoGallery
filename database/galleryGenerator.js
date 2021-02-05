@@ -1,5 +1,5 @@
-const faker = require('faker');
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const faker = require("faker");
+const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 
 const randomBoolean = () => Math.random() < 0.5;
 const randomInt = () => Math.floor((Math.random() * 1000) / 100);
@@ -19,18 +19,19 @@ const listing = (startIndex, endIndex) => {
 };
 
 const csvWriter = createCsvWriter({
-  path: '/Users/helloFriend/Desktop/C0DE/photoGallery/database/CSV/listings.csv',
+  path:
+    "/Users/helloFriend/Desktop/C0DE/photoGallery/database/CSV/listings.csv",
   header: [
-    { id: 'listing_id', title: 'listing_id' },
-    { id: 'isSuperhost', title: 'isSuperhost' },
-    { id: 'reviews', title: 'reviews' },
-    { id: 'rating', title: 'rating' },
+    { id: "listing_id", title: "listing_id" },
+    { id: "isSuperhost", title: "isSuperhost" },
+    { id: "reviews", title: "reviews" },
+    { id: "rating", title: "rating" },
   ],
 });
 
 async function writeListings(num) {
   const currentChunk = Math.floor(num / 100);
-  console.log('chunk count', currentChunk);
+  console.log("chunk count", currentChunk);
 
   for (let i = 0; i < 100; ++i) {
     console.log(`Processing listing chunk : ${i + 1}`);
