@@ -2,7 +2,7 @@
   "name": "photogallery",
   "version": "1.0.0",
   "description": "Photo Gallery for HouseHub",
-  "author": "Jacky Xia",
+  "author": "Jacob Berg",
   "license": "ISC",
   "engines": {
     "node": ">=6.13.0"

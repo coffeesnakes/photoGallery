@@ -41,4 +41,4 @@ async function writePhotos(num) {
   }
 }
 
-writePhotos(1000000);
+writePhotos(5000000);

@@ -14,7 +14,7 @@ const home = (startIndex, endIndex) => {
       country: faker.address.countryCode(),
       rating: randomInt(),
       superhost: randomBoolean(),
-      photo_id: Math.floor(Math.random() * 1000),
+      photo_id: Math.floor(Math.random() * 9999),
     };
     homes.push(entry);
   }
@@ -45,4 +45,4 @@ async function writeHomes(num) {
   }
 }
 
-writeHomes(1000000);
+writeHomes(5000000);

@@ -40,4 +40,4 @@ async function writeListings(num) {
   }
 }
 
-writeListings(1000000);
+writeListings(2000000);
