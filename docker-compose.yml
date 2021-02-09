@@ -1,23 +1,25 @@
-version: '3.8'
+version: '3'
 
 services:
- photogallery:
-  build:
-   context: .
-  ports:
-   - 8080:3017
-  environment:
-   - CONNECTIONSTRING=mongodb://mongo:27017/photogallery
-  volumes:
-   - ./:/code
+  survey:
+    build: helloFriend/photogallery
+    depends_on:
+      - 'database'
+    ports:
+      - '8080:8080'
 
- mongo:
-  image: mongo:4.4.3
-  ports:
-   - 27017:27017
-  volumes:
-   - mongodb:/data/db
-   - mongodb_config:/data/configdb
-volumes:
- mongodb:
- mongodb_config:
+  results:
+    build: helloFriend/photogallery-postgres
+    depends_on:
+      - 'postgres'
+    ports:
+      - '3000:3000'
+
+  database:
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+      environment:
+      - POSTGRES_DB=photogallery
+      - POSTGRES_USER=owner
+    build: .

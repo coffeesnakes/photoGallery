@@ -1,13 +1,13 @@
-FROM node:10.5.0
+FROM node:14.12.0
 
-ENV NODE_ENV=production
+RUN mkdir -p /src/app
 
-WORKDIR /app
+WORKDIR /src/app
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY . /src/app
 
-RUN npm install --production
+RUN npm install
 
-COPY . .
+EXPOSE 3000
 
-CMD ["npm", "run", "docker-start" ]
+CMD ["npm", "start"]
