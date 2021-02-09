@@ -14,12 +14,11 @@ services:
       - 'postgres'
     ports:
       - '3000:3000'
-
   database:
     image: postgres:latest
     ports:
       - '5432:5432'
       environment:
       - POSTGRES_DB=photogallery
-      - POSTGRES_USER=owner
+      - POSTGRES_USER=helloFriend
     build: .
