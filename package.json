@@ -12,7 +12,8 @@
     "dev:react": "webpack --watch",
     "db:setup": "node database/seeder.js",
     "test": "jest --coverage",
-    "docker-start": "node database/seeder.js & webpack & node server/index.js"
+    "seed-postgres": "node --max-old-space-size=8192 database/galleryGenerator.js && node --max-old-space-size=8192 database/homesGenerator.js && node --max-old-space-size=8192 database/photosGenerator.js && node --max-old-space-size=8192 database/usrGenerator.js",
+    "docker-start": "node database/galleryGenerator.js & webpack & node server/index.js"
   },
   "devDependencies": {
     "enzyme": "^3.11.0",
