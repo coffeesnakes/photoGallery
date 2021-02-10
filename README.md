@@ -4,13 +4,15 @@
 
 ## Related Projects
 
-  -
-  -
-  -
+  - https://github.com/Sonic-Design/checkout-calendar
+  - https://github.com/Sonic-Design/photo-carousel
+  - https://github.com/Sonic-Design/reviews
 
 ## Requirements
 
 - [PostgreSQL](https://www.postgresql.org/download/)
+- [New-Relic] configuration file is in the root directory.
+
 
 - Node 6.13.0
 
@@ -25,9 +27,12 @@ npm i
 ```
 
 ## Usage
--Start server * client using npm run dev:react npm run start
+- `npm run seed` will generate mock data CSV files according to `data generating scripts` within the database.
+*May need to adjust Node's allocated RAM within package.json.
+- Load the CSV files into the database within the postgres-db folder: `psql -U postgres -h 127.0.0.1 -f schema.sql`
+- Start the server using `npm start`
+- Start the client using `npm run react`
 
-- **update this with seeding script to generate mock data in a CSV file
 
 </br>
 
