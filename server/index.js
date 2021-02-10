@@ -35,7 +35,6 @@ app.get('/api/homes/:id', (req, res) => {
     });
 });
 
-// home routes
 app.post('/api/homes/:id', (req, res) => {
   const query = 'INSERT INTO homes (home_id, city, usState, country, rating, superhost, photo_id) values ($1, $2, $3, $4, $5, $6, $7) ';
   const { city, usState, country, rating, superhost, photo_id } = req.body;
@@ -77,7 +76,6 @@ app.delete('/api/homes/:id', (req, res) => {
     });
 });
 
-// gallery routes
 app.get('/api/galleries/:id', (req, res) => {
   const query = 'SELECT * from gallery where listing_id=$1';
   const values = [req.params.id];
