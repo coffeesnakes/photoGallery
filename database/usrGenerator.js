@@ -19,7 +19,7 @@ const users = (startIndex, endIndex) => {
   return usersArray;
 };
 const csvWriter = createCsvWriter({
-  path: "/Users/helloFriend/Desktop/C0DE/photoGallery/database/CSV/user.csv",
+  path: path.join(__dirname, "generated", "postgres", "users", "users.csv"),
   header: [
     { id: "users_id", title: "users_id" },
     { id: "username", title: "username" },

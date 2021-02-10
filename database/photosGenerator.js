@@ -1,4 +1,5 @@
 const faker = require("faker");
+const path = require('path');
 const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 
 const randomBoolean = Math.random() < 0.5;
@@ -20,7 +21,7 @@ const photo = (startIndex, endIndex) => {
 };
 
 const csvWriter = createCsvWriter({
-  path: "/Users/helloFriend/Desktop/C0DE/photoGallery/database/CSV/photos.csv",
+  path: path.join(__dirname, 'generated', 'postgres', 'photos', 'photos.csv'),
   header: [
     { id: "photo_id", title: "photo_id" },
     { id: "users_id", title: "users_id" },

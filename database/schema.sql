@@ -40,7 +40,10 @@ CREATE TABLE IF NOT EXISTS homes
   photo_id INTEGER NOT NULL REFERENCES photos(photo_id)
 );
 
-COPY gallery FROM '/Users/helloFriend/Desktop/C0DE/photoGallery/database/CSV/listings.csv' WITH CSV HEADER DELIMITER ',';
-COPY users FROM '/Users/helloFriend/Desktop/C0DE/photoGallery/database/CSV/user.csv' WITH CSV HEADER DELIMITER ',';
-COPY photos FROM '/Users/helloFriend/Desktop/C0DE/photoGallery/database/CSV/photos.csv' WITH CSV HEADER DELIMITER ',';
-COPY homes FROM '/Users/helloFriend/Desktop/C0DE/photoGallery/database/CSV/homes.csv' WITH CSV HEADER DELIMITER ',';
+COPY gallery FROM '../generated/postgres/gallery/gallery.csv' WITH CSV HEADER DELIMITER ',';
+COPY users FROM '../generated/postgres/users/users.csv' WITH CSV HEADER DELIMITER ',';
+COPY photos FROM '../generated/postgres/photos/photos.csv' WITH CSV HEADER DELIMITER ',';
+COPY homes FROM '../generated/postgres/homes/homes.csv' WITH CSV HEADER DELIMITER ',';
+
+CREATE INDEX idx_users_id on users(users_id);
+CREATE INDEX idx_homes_id on homes(home_id);
