@@ -2,12 +2,12 @@ version: '3'
 
 services:
   gallery:
-    container_name: gallery
+    container_name: gallery2
     restart: always
     build: .
     depends_on:
       - 'db'
-    image: gallery
+    image: gallery2
     ports:
       - '80:3001'
   db:
