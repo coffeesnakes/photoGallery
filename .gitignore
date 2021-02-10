@@ -25,3 +25,6 @@ build/
 dist/bundle.js
 
 CSV
+newrelic.js
+script.js
+docker-compose.yml
