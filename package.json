@@ -8,11 +8,11 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
     "react": "webpack",
     "db:setup": "node database/seeder.js",
     "test": "jest --coverage",
-    "seed": "node --max-old-space-size=8192 database/galleryGenerator.js && node --max-old-space-size=8192 database/homesGenerator.js && node --max-old-space-size=8192 database/photosGenerator.js && node --max-old-space-size=8192 database/usrGenerator.js",
+    "seed": "node database/galleryGenerator.js && node database/homesGenerator.js && node database/photosGenerator.js && node database/usrGenerator.js",
     "docker-start": "node database/galleryGenerator.js & webpack & node server/index.js"
   },
   "devDependencies": {
