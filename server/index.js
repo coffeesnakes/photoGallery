@@ -1,15 +1,16 @@
 // require("newrelic");
 const path = require('path');
 const express = require('express');
-const { Pool } = require('pg');
-
+// const { Pool } = require('pg');
+const pg = require('pg');
+pg.connect('postgres://postgres:banana@localhost:5432/gallery');
 // const galleries = require('../server/routes/galleries.js');
 
-const pool = new Pool({
-  user: 'helloFriend',
-  database: 'photogallery',
-  port: 5432,
-});
+// const pool = new Pool({
+//   user: 'helloFriend',
+//   database: 'photogallery',
+//   port: 5432,
+// });
 pool.connect()
   .then(() => console.log('connected to postgreSQL successfully!'));
 

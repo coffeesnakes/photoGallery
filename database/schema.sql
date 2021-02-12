@@ -5,7 +5,7 @@ CREATE DATABASE photogallery;
 
 CREATE TABLE IF NOT EXISTS gallery
 (
-  listing_id SERIAL PRIMARY KEY,
+  listing_id SERIAL PRIMARY KEY references homes(home_id),
   isSuperhost Boolean NOT NULL,
   reviews BOOLEAN NOT NULL,
   rating INTEGER NOT NULL
