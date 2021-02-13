@@ -6,8 +6,7 @@ const pg = require('pg');
 
 const pool = new pg.Pool();
 
-pool.connect('postgres://postgres:banana@localhost:5432/gallery')
-  .then(() => console.log('connected to postgreSQL successfully!'));
+pool.connect('postgres://postgres:banana@localhost:5432/gallery', () => console.log('connected to gallery'));
 
 const app = express();
 const port = 3003;
