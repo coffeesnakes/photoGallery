@@ -2,11 +2,11 @@
 const path = require('path');
 const express = require('express');
 
-const pg = require('pg');
+const connectionString = 'postgres://postgres:banana@localhost:5432/gallery';
 
-const pool = new pg.Pool();
+const { Pool } = require('pg');
 
-pool.connect('postgres://postgres:banana@localhost:5432/gallery', () => console.log('connected to gallery'));
+const pool = new Pool({ connectionString });
 
 const app = express();
 const port = 3003;
@@ -160,6 +160,46 @@ app.delete('/api/users/:id', (req, res) => {
     .query(query, values)
     .then((data) => {
       res.status(204).send(data);
+    })
+    .catch((error) => {
+      res.status(400).send(error);
+    });
+});
+
+app.get('/api/photos/:id', (req, res) => {
+  const query = 'SELECT * from photos where photo_id=$1';
+  const values = [req.params.id];
+  console.log(query);
+  pool
+    .query(query, values)
+    .then(({ rows }) => {
+      res.status(200).send(rows);
+    })
+    .catch((error) => {
+      res.status(400).send(error);
+    });
+});
+
+app.delete('/api/galleries/:id', (req, res) => {
+  const query = 'DELETE FROM gallery WHERE listing_id=$1';
+  const values = [req.params.id];
+  pool
+    .query(query, values)
+    .then((data) => {
+      res.status(204).send(data);
+    })
+    .catch((error) => {
+      res.status(400).send(error);
+    });
+});
+
+app.get('/api/photos/:id', (req, res) => {
+  const query = 'SELECT * from photos where listing_id=$1';
+  const values = [req.params.id];
+  pool
+    .query(query, values)
+    .then(({ rows }) => {
+      res.status(200).send(rows);
     })
     .catch((error) => {
       res.status(400).send(error);
