@@ -2,11 +2,11 @@
 const path = require('path');
 const express = require('express');
 
-const connectionString = 'postgres://postgres:banana@localhost:5432/gallery';
+const connectString = 'postgres://postgres:banana@localhost:5432/gallery';
 
 const { Pool } = require('pg');
 
-const pool = new Pool({ connectionString });
+const pool = new Pool({ connectionString: connectString });
 
 const app = express();
 const port = 3003;
